@@ -1,0 +1,27 @@
+abstract class Veiculo {
+  abstract calcularCusto(distancia: number): number;
+}
+
+class Carro extends Veiculo {
+  calcularCusto(distancia: number): number {
+      return distancia * 1.5;
+  }
+}
+
+class Moto extends Veiculo {
+  calcularCusto(distancia: number): number {
+      return distancia * 1;
+  }
+}
+
+class Caminhao extends Veiculo {
+  calcularCusto(distancia: number): number {
+      return distancia * 3;
+  }
+}
+
+interface Usuario {
+  email: string;
+  senha: string;
+  permissao: 'admin' | 'usuario';
+}
