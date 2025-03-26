@@ -1,0 +1,25 @@
+interface Notificacao {
+  
+  enviaa(destinatario: string | number, mens: string): void;
+}
+
+class Email implements Notificacao {
+
+  enviaa(destinatario: string, mens: string): void {
+      console.log(mens)
+  }
+}
+
+
+class Sms implements Notificacao {
+  enviaa(destinatario: number, mens: string): void {
+      console.log("SMS foi")
+      console.log(mens)
+  }
+}
+
+let email = new Email()
+email.enviaa("luvas@gmail.com")
+
+let sms = new Sms()
+sms.enviaa(666666, "OK")
