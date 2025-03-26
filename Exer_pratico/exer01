@@ -1,1 +1,19 @@
+interface Cliente {
+  nome: string;
+  cpf: string;
+  rendaMensal: number;
+}
 
+function validarClient(dados: any): Cliente {
+  if (typeof dados.nome !== 'string') {
+      throw new Error('O campo "nome" é obrigatório e deve ser uma string.');
+  }
+  if (typeof dados.cpf !== 'string') {
+      throw new Error('O campo "cpf" é obrigatório e deve ser uma string.');
+  }
+  if (typeof dados.rendaMensal !== 'number') {
+      throw new Error('O campo "rendaMensal" é obrigatório e deve ser um número.');
+  }
+  
+  return dados as Cliente
+}
