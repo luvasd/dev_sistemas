@@ -1,0 +1,18 @@
+class SistemaAutenticacao {
+  private usuarios: Usuario[] = [
+      { email: "admin@site.com", senha: "1234", permissao: "admin" },
+      { email: "user@site.com", senha: "abcd", permissao: "usuario" }
+  ];
+
+  autenticar(email: string, senha: string): string {
+      const usuario = this.usuarios.find(u => u.email === email && u.senha === senha);
+      return usuario ? (usuario.permissao === 'admin' ? "Acesso como admin." : "Acesso como usuario.") : "Acesso negado.";
+  }
+
+  acessarRecurso(email: string, senha: string, recurso: string): string {
+      const usuario = this.usuarios.find(u => u.email === email && u.senha === senha);
+      return usuario && (recurso === 'admin' ? usuario.permissao === 'admin' : true)
+           "Acesso permitido."
+           "Acesso negado.";
+  }
+}
