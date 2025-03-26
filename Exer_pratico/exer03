@@ -1,0 +1,5 @@
+function processaVal(valores: number[], minimo: number, taxa: number): number[] {
+  return valores.filter(v => v > minimo).map(v => v * (1 + taxa)).sort((a, b) => b - a);
+}
+
+console.log(processaVal([100, 200, 50, 300, 150], 100, 0.1)); 
